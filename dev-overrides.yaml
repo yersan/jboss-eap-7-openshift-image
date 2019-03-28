@@ -5,13 +5,13 @@ name: "jboss-eap-7-tech-preview/eap-cd-openshift"
 modules:
       repositories:
           - name: cct_module
-            #path : /mnt/mac-shared/projects/redhat/ocp/cct_module
-            git:
-                  url: https://github.com/jboss-openshift/cct_module.git
-                  ref: master
+            path : /mnt/mac-shared/projects/redhat/ocp/cct_module
+            #git:
+             #     url: https://github.com/jboss-openshift/cct_module.git
+              #    ref: master
           - name: jboss-eap-modules
-            #path: /mnt/mac-shared/projects/redhat/ocp/jboss-eap-modules
-            path: /home/yborgess/dev/projects/ocp/jboss-eap-modules
+            path: /mnt/mac-shared/projects/redhat/ocp/jboss-eap-modules
+            #path: /home/yborgess/dev/projects/ocp/jboss-eap-modules
             #git:
             #      url: https://github.com/jboss-container-images/jboss-eap-modules.git
             #      ref: master
@@ -34,7 +34,6 @@ modules:
         - name: os-java-jolokia
         - name: jboss.eap.cd.jolokia
         - name: os-eap7-openshift
-        - name: jboss.eap.cd15.openshift
         - name: jboss.eap7.cli.scripts
         - name: jboss.eap.cd.openshift.modules
         - name: os-eap7-ping
@@ -43,6 +42,7 @@ modules:
         - name: os-eap-launch
         - name: os-eap7-launch
         - name: jboss.eap.cd.openshift.launch
+        - name: jboss.eap.cd.openshift.launch.cli
         - name: jboss.eap.cd.logging
         - name: jboss.eap.config.mp-config
         - name: jboss.eap.config.jgroups
