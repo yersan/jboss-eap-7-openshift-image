@@ -5,17 +5,63 @@ name: "jboss-eap-7-tech-preview/eap-cd-openshift"
 modules:
       repositories:
           - name: cct_module
+            #path : /mnt/mac-shared/projects/redhat/ocp/cct_module
             git:
                   url: https://github.com/jboss-openshift/cct_module.git
                   ref: master
           - name: jboss-eap-modules
-            git:
-                  url: https://github.com/jboss-container-images/jboss-eap-modules.git
-                  ref: master
+            #path: /mnt/mac-shared/projects/redhat/ocp/jboss-eap-modules
+            path: /home/yborgess/dev/projects/ocp/jboss-eap-modules
+            #git:
+            #      url: https://github.com/jboss-container-images/jboss-eap-modules.git
+            #      ref: master
           - name: jboss-eap-7-image
             git:
-                  url: https://github.com/jboss-container-images/jboss-eap-7-image.git
-                  ref: eap-cd-dev
+              url: https://github.com/jboss-container-images/jboss-eap-7-image.git
+              ref: eap-cd-dev
+            #  git:
+            #        url: https://github.com/luck3y/jboss-eap-7-image.git
+            #        ref: fix_cd14_md5
+
+      install:
+        - name: jboss.container.openjdk.jdk
+          version: "8"
+        - name: eap-cd-latest
+        - name: dynamic-resources
+        - name: s2i-common
+        - name: java-alternatives
+        - name: os-eap-s2i
+        - name: os-java-jolokia
+        - name: jboss.eap.cd.jolokia
+        - name: os-eap7-openshift
+        - name: jboss.eap.cd15.openshift
+        - name: jboss.eap7.cli.scripts
+        - name: jboss.eap.cd.openshift.modules
+        - name: os-eap7-ping
+        - name: os-eap-activemq-rar
+        - name: os-java-run
+        - name: os-eap-launch
+        - name: os-eap7-launch
+        - name: jboss.eap.cd.openshift.launch
+        - name: jboss.eap.cd.logging
+        - name: jboss.eap.config.mp-config
+        - name: jboss.eap.config.jgroups
+        - name: jboss.eap.config.elytron
+        - name: jboss.eap.config.tracing
+        - name: os-eap-probes
+        - name: jboss-maven
+        - name: os-eap-db-drivers
+        - name: os-eap-sso
+        - name: os-eap70-sso
+        - name: os-java-hawkular
+        - name: os-eap70-hawkular
+        - name: os-eap-hawkular
+        - name: os-eap-deployment-scanner
+        - name: os-eap-extensions
+        - name: openshift-layer
+        - name: openshift-passwd
+        - name: os-logging
+        - name: jboss.container.eap.prometheus.config
 
 osbs:
       repository:
